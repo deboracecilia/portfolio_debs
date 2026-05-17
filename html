@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Débora Cecília | Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    }
+
+    .hero {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn-secondary:hover {
+      background: #38bdf8;
+      color: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      padding: 35px;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+    }
+
+    .info-item strong {
+      color: #f8fafc;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #38bdf8;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-card,
+    .skill-card,
+    .project-card,
+    .experience-card,
+    .contact-card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 0.3s;
+    }
+
+    .about-card:hover,
+    .skill-card:hover,
+    .project-card:hover,
+    .experience-card:hover,
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.15);
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .experience-card h3 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      background: rgba(56,189,248,0.15);
+      color: #7dd3fc;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .timeline {
+      border-left: 3px solid #38bdf8;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: #38bdf8;
+      border-radius: 50%;
+      position: absolute;
+      left: -29px;
+      top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Olá, eu sou <span>Débora Cecília</span></h1>
+        <p>
+          Engenheira de Alimentos com experiência em qualidade, processos e análise de dados.
+          Apaixonada por melhoria contínua, Power BI, SQL e gestão de processos.
+        </p>
+
+        <div class="buttons">
+          <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+          <a href="#contato" class="btn btn-secondary">Contato</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Resumo profissional</h3>
+
+        <div class="info-item">
+          <strong>Formação:</strong>
+          <p>Engenharia de Alimentos</p>
+          <p>Técnica em Nutrição e Dietética</p>
+          <P>Técnica em Inteligência Artificial</P>
+        </div>
+
+        <div class="info-item">
+          <strong>Especialidades:</strong>
+          <p>Power BI, SQL, python, HTML, qualidade, processos e indicadores</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="sobre">
+  <h2 class="section-title">Quem sou eu</h2>
+
+  <div class="about">
+
+    <!-- CARD 1 -->
+    <div class="about-card">
+      <h3>Minha trajetória</h3>
+
+      <br>
+
+      <p>
+        Sou engenheira de alimentos apaixonada por qualidade, processos,
+        melhoria contínua e análise de dados.
+      </p>
+
+      <br>
+
+      <p>
+        Minha trajetória começou na área laboratorial e evoluiu para gestão,
+        controle de qualidade e desenvolvimento de indicadores estratégicos.
+      </p>
+
+      <br>
+
+      <p>
+        Hoje busco unir conhecimento técnico com análise de dados para gerar
+        soluções mais eficientes e inteligentes para empresas.
+      </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="about-card">
+      <h3>Experiência & Liderança</h3>
+
+      <br>
+
+      <p>
+        Durante minha graduação participei da empresa júnior ENGEALI,
+        onde atuei como gerente de projetos e posteriormente diretora,
+        liderando equipes e projetos para clientes.
+      </p>
+
+      <br>
+
+      <p>
+        Também participei de iniciação científica no laboratório de Bioquímica
+        da UNESP de São José do Rio Preto, desenvolvendo pesquisas sobre
+        isolamento da enzima lacase em fungos termofílicos.
+      </p>
+
+      <br>
+
+      <p>
+        Além disso, participei da comissão organizadora da SEMANENG XXXVIII,
+        contribuindo para eventos acadêmicos e atividades voltadas aos estudantes.
+      </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="about-card">
+      <h3>O que eu faço</h3>
+
+      <br>
+
+      <p>
+        Tenho experiência em monitoramento de processos,
+        desenvolvimento de dashboards e indicadores,
+        melhoria contínua e elaboração de documentação técnica.
+      </p>
+
+      <br>
+
+      <h4>Principais competências</h4>
+
+      <br>
+
+      <div class="tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Python</span>
+        <span class="tag">Banco de Dados</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Ferramentas da Qualidade</span>
+        <span class="tag">Documentação Técnica</span>
+        <span class="tag">Processos</span>
+        <span class="tag">Indicadores</span>
+        <span class="tag">Dashboards</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+  </div>
+</section>
+<section id="experiencias">
+  <h2 class="section-title">Experiência profissional</h2>
+
+  <div class="timeline">
+
+    <!-- EXPERIÊNCIA 1 -->
+    <div class="timeline-item">
+      <div class="experience-card">
+        <h3>Analista de qualidade</h3>
+
+        <p>
+          <strong>Aveel - Indústria de Suplementos Alimentares | 
+          Cervejaria e Distribuidora Philip Davis</strong>
+        </p>
+
+        <p>ago de 2024 - nov de 2025 • Guapiaçu - SP</p>
+
+        <br>
+
+        <p>
+          • Gestão e monitoramento de processos produtivos, assegurando conformidade
+          com normas regulatórias e padrões internos de qualidade.
+        </p>
+
+        <p>
+          • Planejamento e execução de auditorias internas, identificação de desvios
+          e implementação de ações corretivas e preventivas (CAPA).
+        </p>
+
+        <p>
+          • Aplicação de metodologias de melhoria contínua (MASP e PDCA)
+          para otimização de processos produtivos.
+        </p>
+
+        <p>
+          • Desenvolvimento de dashboards e indicadores estratégicos em Power BI,
+          apoiando a tomada de decisão.
+        </p>
+
+        <p>
+          • Participação no desenvolvimento de novos produtos, elaboração
+          de fichas técnicas e documentação regulatória.
+        </p>
+      </div>
+    </div>
+
+    <!-- EXPERIÊNCIA 2 -->
+    <div class="timeline-item">
+      <div class="experience-card">
+        <h3>Garantia da Qualidade - Estágio</h3>
+
+        <p>
+          <strong>O Rei do Pão de Queijo</strong>
+        </p>
+
+        <p>fev de 2024 - jul de 2024 • São José do Rio Preto - SP</p>
+
+        <br>
+
+        <p>
+          • Monitoramento de condições de armazenamento e controle de temperatura
+          de câmaras frias.
+        </p>
+
+        <p>
+          • Garantia da segurança dos alimentos e conformidade com
+          Boas Práticas de Fabricação (BPF).
+        </p>
+
+        <p>
+          • Elaboração e revisão de POPs e manuais de BPF.
+        </p>
+
+        <p>
+          • Implementação de plano de ação baseado na metodologia 5S.
+        </p>
+
+        <p>
+          • Desenvolvimento de tabelas nutricionais e fichas técnicas de produtos.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+          
+            <SP class=""></SP>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <h2 class="section-title">Habilidades</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Análise de Dados</h3>
+        <p>Criação de dashboards, indicadores e relatórios estratégicos.</p>
+
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Qualidade</h3>
+        <p>Atuação em melhoria contínua e controle de qualidade.</p>
+
+        <div class="tags">
+          <span class="tag">5S</span>
+          <span class="tag">PDCA</span>
+          <span class="tag">MASP</span>
+          <span class="tag">BPF</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Gestão</h3>
+        <p>Experiência com liderança de equipes e gestão de projetos.</p>
+
+        <div class="tags">
+          <span class="tag">Liderança</span>
+          <span class="tag">KAIZEN</span>
+          <span class="tag">Processos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 class="section-title">Projetos</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Dashboard de Qualidade</h3>
+        <p>
+          Desenvolvimento de dashboards em Power BI para monitoramento de indicadores de qualidade,
+          produtividade e conformidade.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Implementação de 5S</h3>
+        <p>
+          Aplicação de metodologia 5S com plano de ação voltado para organização e melhoria dos processos.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Manual de BPF</h3>
+        <p>
+          Criação e implementação de manual de Boas Práticas de Fabricação em unidades produtivas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <section id="contato">
+    <h2 class="section-title">Contato</h2>
+
+    <div class="contact-card">
+      <p><strong>Email:</strong> deboraeng.alimento@gmail.com</p>
+      <p><strong>LinkedIn:</strong> https://www.linkedin.com/in/debora-cecilia/ </p>
+      <p><strong> Telfone:</strong> (11) 97782-1797 </p>
+      <p><strong>GitHub:</strong> https://github.com/deboracecilia</p>
+      <p><strong>Cidade:</strong> São Paulo - SP</p>
+    </div>
+  </section>
+
+  <footer>
+    <p> Débora Cecília | Portfólio Profissional ©</p>
+  </footer>
+
+</body>
+</html>
