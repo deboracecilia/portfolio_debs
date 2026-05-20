@@ -7,6 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  
+  <!-- UIL Icons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
 
   <style>
     * {
@@ -215,6 +221,160 @@
       color: #94a3b8;
     }
 
+    /* ==================== PORTFOLIO ====================*/
+    .portfolio__container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .portfolio__content {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .portfolio__content:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.15);
+    }
+
+    .portfolio__img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .portfolio__data h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .portfolio__description {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+
+    .button--flex {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .button--small {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+
+    .button__icon {
+      font-size: 1.2rem;
+    }
+
+    .swiper-slide {
+      cursor: grab;
+      width: 100%;
+    }
+
+    /* Swiper espaçamento */
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide-active {
+      opacity: 1;
+    }
+
+    /* Swiper Navigation Arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: transparent;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #6366f1;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      color: #8b5cf6;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    .swiper-button-next {
+      right: -60px;
+    }
+
+    .swiper-button-prev {
+      left: -60px;
+    }
+
+    .swiper-portfolio-icon {
+      color: #0f172a;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .swiper-pagination {
+      position: absolute;
+      bottom: -50px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: rgba(56, 189, 248, 0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #38bdf8;
+      width: 30px;
+      border-radius: 999px;
+    }
+
     @media (max-width: 768px) {
       .hero-text h1 {
         font-size: 2.5rem;
@@ -222,6 +382,15 @@
 
       section {
         padding: 70px 6%;
+      }
+
+      .portfolio__content {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .portfolio__img {
+        height: 200px;
       }
     }
   </style>
@@ -491,31 +660,64 @@
     </div>
   </section>
 
-  <section id="projetos">
-    <h2 class="section-title">Projetos</h2>
+  <!--==================== PORTFOLIO ====================-->
+  <section class="portfolio section" id="projetos">
+    <h2 class="section-title">Portfólio</h2>
+    <span style="text-align: center; color: #cbd5e1; display: block; margin-bottom: 40px;">Projetos mais recentes</span>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Dashboard de Qualidade</h3>
-        <p>
-          Desenvolvimento de dashboards em Power BI para monitoramento de indicadores de qualidade,
-          produtividade e conformidade.
-        </p>
+    <div class="portfolio__container container swiper-container">
+      <div class="swiper-wrapper">
+
+        <!--==================== PORTFOLIO PROJETO 1 ====================-->
+        <div class="portfolio__content grid swiper-slide">
+          <img src="https://via.placeholder.com/400x250?text=Dashboard+Power+BI" alt="Dashboard de Qualidade" class="portfolio__img">
+
+          <div class="portfolio__data">
+            <h3 class="portfolio__title">Dashboard de Qualidade</h3>
+            <p class="portfolio__description">Desenvolvimento de dashboards em Power BI para monitoramento de indicadores de qualidade, produtividade e conformidade. Implementação de métricas estratégicas para apoio à tomada de decisão.</p>
+            <a href="#contato" class="button button--flex button--small portfolio__button">
+              Saiba mais
+              <i class="uil uil-arrow-right button__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!--==================== PORTFOLIO PROJETO 2 ====================-->
+        <div class="portfolio__content grid swiper-slide">
+          <img src="https://via.placeholder.com/400x250?text=Metodologia+5S" alt="Implementação de 5S" class="portfolio__img">
+
+          <div class="portfolio__data">
+            <h3 class="portfolio__title">Implementação de 5S</h3>
+            <p class="portfolio__description">Aplicação de metodologia 5S com plano de ação voltado para organização e melhoria dos processos. Foco em excelência operacional e eficiência na execução das atividades produtivas.</p>
+            <a href="#contato" class="button button--flex button--small portfolio__button">
+              Saiba mais
+              <i class="uil uil-arrow-right button__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!--==================== PORTFOLIO PROJETO 3 ====================-->
+        <div class="portfolio__content grid swiper-slide">
+          <img src="https://via.placeholder.com/400x250?text=Manual+BPF" alt="Manual de BPF" class="portfolio__img">
+
+          <div class="portfolio__data">
+            <h3 class="portfolio__title">Manual de BPF</h3>
+            <p class="portfolio__description">Criação e implementação de manual de Boas Práticas de Fabricação em unidades produtivas. Garantia de conformidade regulatória e segurança dos alimentos através de documentação técnica completa.</p>
+            <a href="#contato" class="button button--flex button--small portfolio__button">
+              Saiba mais
+              <i class="uil uil-arrow-right button__icon"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="project-card">
-        <h3>Implementação de 5S</h3>
-        <p>
-          Aplicação de metodologia 5S com plano de ação voltado para organização e melhoria dos processos.
-        </p>
-      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next">></div>
+      <div class="swiper-button-prev"><</div>
 
-      <div class="project-card">
-        <h3>Manual de BPF</h3>
-        <p>
-          Criação e implementação de manual de Boas Práticas de Fabricação em unidades produtivas.
-        </p>
-      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -536,6 +738,39 @@
   <footer>
     <p> Débora Cecília | Portfólio Profissional ©</p>
   </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    // Inicializar Swiper
+    var swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      spaceBetween: 30,
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+      }
+    });
+  </script>
 
 </body>
 </html>
