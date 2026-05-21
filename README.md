@@ -42,3 +42,6 @@ O site foi desenvolvido para funcionar em:
 - Smartphones
 
 ---
+
+## 🔗 LINK 
+https://portfolio-debora-cecilia.netlify.app/ 
